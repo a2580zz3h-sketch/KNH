@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇪🇬[✧ K.N.H ✧ MARTHA ✧]🇸🇾</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Noto+Sans+Arabic:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ====== خلفية النجوم ====== -->
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <!-- ====== خلفية الغيوم المتحركة ====== -->
+    <div class="sky">
+        <div class="clouds">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
+            <div class="cloud cloud-5"></div>
+            <div class="cloud cloud-6"></div>
+        </div>
+    </div>
+
+    <!-- ====== حقل القمح المتحرك ====== -->
+    <div class="wheat-field"></div>
+
+    <!-- ====== جزيئات متطايرة ====== -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- ====== OVERLAY ====== -->
+    <div class="overlay"></div>
+
+    <!-- ====== الشريط العلوي ====== -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-flag">🇪🇬</span>
+                <span class="nav-title">✧ K.N.H ✧ MARTHA ✧</span>
+                <span class="nav-flag">🇸🇾</span>
+            </div>
+            <div class="nav-links">
+                <a href="https://wa.me/+201128172578?text=%D8%A7%D9%84%D9%80%D8%B3%D9%84%D8%A7%D9%85+%D8%B9%D9%80%D9%84%D9%80%D9%8A%D9%83%D9%85+%D8%B9%D8%A7%D9%8A%D8%B2+%D8%A7%D9%86%D8%B6%D9%85+%D9%84%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9+%D9%84%D9%82%D8%A8%D9%8A+(%D8%A7%D9%83%D8%AA%D8%A8+%D9%84%D9%82%D8%A8%D9%83)" target="_blank" class="nav-btn admin-btn">
+                    <i class="fas fa-crown"></i>
+                    <span>التواصل مع المشرف</span>
+                    <div class="nav-btn-glow"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====== المحتوى الرئيسي ====== -->
+    <div class="content">
+        <!-- الزخرفة العلوية -->
+        <div class="ornament-top">
+            <span>❀</span><span>✦</span><span>❀</span><span>✦</span><span>❀</span>
+        </div>
+
+        <!-- الشعار الرئيسي -->
+        <div class="main-badge">
+            <div class="badge-ring">
+                <div class="badge-ring-inner"></div>
+                <div class="badge-icon">⛩️</div>
+            </div>
+            <div class="badge-text">
+                <h1 class="site-title">
+                    <span class="title-line title-line-1">🇪🇬 ✧ K.N.H ✧ MARTHA ✧ 🇸🇾</span>
+                    <span class="title-line title-line-2">〜 مجتمع أوتاكو الأنمي 〜</span>
+                </h1>
+            </div>
+        </div>
+
+        <!-- الوصف -->
+        <div class="description-box">
+            <div class="desc-ornament"><i class="fas fa-quote-right"></i></div>
+            <p class="description">
+                مرحباً بك في <strong>عالم الأنمي</strong> حيث تجتمع القلوب على <strong>الشغف</strong><br>
+                نتبادل <strong>الأحداث</strong>، نشارك <strong>الذكريات</strong>، ونصنع <strong>صداقات</strong> لا تُنسى<br>
+                <span class="desc-highlight">✦ انضم إلينا وكن جزءاً من الحكاية ✦</span>
+            </p>
+            <div class="desc-ornament"><i class="fas fa-quote-left"></i></div>
+        </div>
+
+        <!-- الأزرار -->
+        <div class="buttons">
+            <a href="https://chat.whatsapp.com/Ds8JHFQ926DBb8lQil9Qr4" target="_blank" class="btn btn-primary">
+                <div class="btn-bg"></div>
+                <span class="btn-icon"><i class="fab fa-whatsapp"></i></span>
+                <span class="btn-text">
+                    <small>انضم إلينا الآن</small>
+                    <strong>المجموعة الرئيسية</strong>
+                </span>
+                <div class="btn-sparkle"></div>
+                <div class="btn-border"></div>
+            </a>
+
+            <button class="btn btn-secondary" id="rulesBtn">
+                <div class="btn-bg"></div>
+                <span class="btn-icon"><i class="fas fa-scroll"></i></span>
+                <span class="btn-text">
+                    <small>تعرف على</small>
+                    <strong>قوانين المجتمع</strong>
+                </span>
+                <div class="btn-border"></div>
+            </button>
+
+            <a href="https://wa.me/+201128172578?text=%D8%A7%D9%84%D9%80%D8%B3%D9%84%D8%A7%D9%85+%D8%B9%D9%80%D9%84%D9%80%D9%8A%D9%83%D9%85+%D8%B9%D8%A7%D9%8A%D8%B2+%D8%A7%D9%86%D8%B6%D9%85+%D9%84%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9+%D9%84%D9%82%D8%A8%D9%8A+(%D8%A7%D9%83%D8%AA%D8%A8+%D9%84%D9%82%D8%A8%D9%83)" target="_blank" class="btn btn-gold">
+                <div class="btn-bg"></div>
+                <span class="btn-icon"><i class="fas fa-crown"></i></span>
+                <span class="btn-text">
+                    <small>تواصل مع</small>
+                    <strong>المشرف العام</strong>
+                </span>
+                <div class="btn-border"></div>
+            </a>
+        </div>
+
+        <!-- معلومات إضافية -->
+        <div class="info-bar">
+            <div class="info-item">
+                <i class="fas fa-users"></i>
+                <span>مجتمع أنمي</span>
+            </div>
+            <div class="info-divider">•</div>
+            <div class="info-item">
+                <i class="fas fa-comments"></i>
+                <span>نقاشات حية</span>
+            </div>
+            <div class="info-divider">•</div>
+            <div class="info-item">
+                <i class="fas fa-gamepad"></i>
+                <span>ألعاب وفعاليات</span>
+            </div>
+            <div class="info-divider">•</div>
+            <div class="info-item">
+                <i class="fas fa-heart"></i>
+                <span>عائلة واحدة</span>
+            </div>
+        </div>
+
+        <!-- التذييل -->
+        <div class="footer-bar">
+            <span class="footer-ornament">❀</span>
+            <span>🇪🇬 جروب أنمي مصري سوري 🇸🇾</span>
+            <span class="footer-ornament">❀</span>
+        </div>
+    </div>
+
+    <!-- ====== مودال القوانين ====== -->
+    <div class="modal-overlay" id="rulesModal">
+        <div class="modal">
+            <div class="modal-glow"></div>
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fas fa-scroll modal-title-icon"></i>
+                    <h2>قوانين المجتمع</h2>
+                </div>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="rule">
+                    <div class="rule-icon-box">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="rule-content">
+                        <strong>الاحترام المتبادل 🤝</strong>
+                        <p>احترم جميع الأعضاء بغض النظر عن آرائهم أو خلفياتهم. لا مكان للتنمر أو الإهانة أو التمييز.</p>
+                    </div>
+                </div>
+                <div class="rule">
+                    <div class="rule-icon-box">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <div class="rule-content">
+                        <strong>ممنوع السبام 🚫</strong>
+                        <p>يمنع إرسال الروابط العشوائية أو الإعلانات أو تكرار الرسائل دون إذن المشرفين.</p>
+                    </div>
+                </div>
+                <div class="rule">
+                    <div class="rule-icon-box">
+                        <i class="fas fa-mask"></i>
+                    </div>
+                    <div class="rule-content">
+                        <strong>احترام أذواق الأنمي 🎭</strong>
+                        <p>لكل شخص ذوقه الخاص في الأنمي والمانجا. لا تسخر من اختيارات الآخرين أو تبدأ حروباً عقيمة.</p>
+                    </div>
+                </div>
+                <div class="rule">
+                    <div class="rule-icon-box">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="rule-content">
+                        <strong>محتوى آمن 🔞</strong>
+                        <p>يمنع نشر محتوى +18 أو صور غير لائقة. هذا المجتمع مفتوح لجميع الأعمار ويجب أن يبقى آمناً.</p>
+                    </div>
+                </div>
+                <div class="rule">
+                    <div class="rule-icon-box">
+                        <i class="fas fa-torii-gate"></i>
+                    </div>
+                    <div class="rule-content">
+                        <strong>المواضيع المسموحة 💬</strong>
+                        <p>النقاشات العامة مرحب بها، لكن يفضل الالتزام بمواضيع الأنمي والمانجا والثقافة اليابانية والألعاب.</p>
+                    </div>
+                </div>
+                <div class="rule">
+                    <div class="rule-icon-box">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="rule-content">
+                        <strong>المشرفون 🛡️</strong>
+                        <p>قرارات المشرفين نافذة واحترامها واجب. في حال وجود مشكلة، يرجى التواصل معهم على الخاص.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-confirm" id="confirmModal">
+                    <i class="fas fa-check"></i>
+                   理解了 • فهمت
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== تأثيرات الصوت (اختياري) ====== -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
