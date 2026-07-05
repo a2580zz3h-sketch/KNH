@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Star agency - استوديو تصوير احترافي">
+    <meta name="keywords" content="تصوير, استوديو, مصر, حجز موعد, تصوير احترافي">
+    <meta name="author" content="Star agency">
+    <title>Star agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+    <div class="animated-bg">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+        <div class="circle c4"></div>
+        <div class="circle c5"></div>
+        <div class="circle c6"></div>
+        <div class="circle c7"></div>
+        <div class="circle c8"></div>
+        <div class="circle c9"></div>
+        <div class="circle c10"></div>
+        <div class="circle c11"></div>
+        <div class="circle c12"></div>
+        <div class="circle c13"></div>
+        <div class="circle c14"></div>
+        <div class="circle c15"></div>
+        <div class="circle c16"></div>
+        <div class="circle c17"></div>
+        <div class="circle c18"></div>
+        <div class="circle c19"></div>
+        <div class="circle c20"></div>
+    </div>
+
+    <audio id="bg-music" autoplay loop preload="auto">
+        <source src="https://o.uguu.se/PJWjzMmo.mp3" type="audio/mpeg">
+        متصفحك لا يدعم تشغيل الصوت
+    </audio>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">📸</span>
+                <span class="logo-text">Star agency</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                <li><a href="#services" class="nav-link">خدماتنا</a></li>
+                <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
+                <li><button class="nav-dev-btn" id="dev-btn">👨‍💻 مطور</button></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>✨</span>
+                <span>أفضل جودة في مصر</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Star agency</span>
+                <span class="title-line highlight">الاستوديو الاحترافي</span>
+            </h1>
+            <p class="hero-subtitle">
+                نلتقط لحظاتك بأعلى جودة واحترافية
+            </p>
+            <p class="hero-desc">
+                نقدم لك تجربة تصوير فريدة مع أحدث المعدات والتقنيات
+                لتخليد أجمل ذكرياتك بأعلى معايير الجودة
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="btn-book">
+                    <span class="btn-icon">📅</span>
+                    <span>حجز موعد</span>
+                </button>
+                <a href="https://wa.me/+201122472776/?text=السلام+عليكم+عايز/ه+احجز+موعد+تصوير" class="btn btn-whatsapp" target="_blank">
+                    <span class="btn-icon">💬</span>
+                    <span>تواصل مع مشرف الحجز</span>
+                </a>
+                <a href="tel:+201122472776" class="btn btn-phone">
+                    <span class="btn-icon">📞</span>
+                    <span>اتصل بنا</span>
+                </a>
+                <a href="https://www.instagram.com/star.agency.eg?igsh=MW5haGp1MWp1aG9wdA==" class="btn btn-instagram" target="_blank">
+                    <span class="btn-icon">📷</span>
+                    <span>قناة انستا الاستوديو</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">عميل سعيد</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">سنه</span>
+                    <span class="stat-label">خبره</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">رضا العملاء</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>اسحب للأسفل</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-icon">📸</div>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">السلام عليكم ورحمة الله</h2>
+                <div class="modal-divider"></div>
+                <div class="price-info">
+                    <p class="price-label">أسعار الحجز في العادة تتراوح بين</p>
+                    <div class="price-range">
+                        <div class="price-box">
+                            <span class="price-amount">350</span>
+                            <span class="price-currency">جنيه مصري</span>
+                        </div>
+                        <span class="price-separator">و</span>
+                        <div class="price-box">
+                            <span class="price-amount">450</span>
+                            <span class="price-currency">جنيه مصري</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="modal-text">
+                    وإذا أردت الحجز اضغط على تواصل مع مشرف الحجز
+                </p>
+                <a href="https://wa.me/+201122472776/?text=السلام+عليكم+عايز/ه+احجز+موعد+تصوير" class="btn btn-whatsapp-modal" target="_blank">
+                    <span class="whatsapp-icon">💬</span>
+                    <span>تواصل مع مشرف الحجز</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="section-tag">ما نقدمه لك</span>
+            <h2 class="section-title">خدماتنا</h2>
+            <p class="section-desc">نقدم مجموعة متكاملة من خدمات التصوير الاحترافي</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📷</div>
+                <h3>تصوير احترافي</h3>
+                <p>أحدث الكاميرات والمعدات لتصوير بأعلى جودة ممكنة</p>
+                <span class="service-tag">متاح الآن</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎬</div>
+                <h3>مونتاج احترافي</h3>
+                <p>تعديل وتلوين بأحدث برامج المونتاج العالمية</p>
+                <span class="service-tag">متاح الآن</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>تأثيرات خاصة</h3>
+                <p>تأثيرات بصرية مبتكرة لإبراز جمال كل لحظة</p>
+                <span class="service-tag">متاح الآن</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>استوديو مجهز</h3>
+                <p>إضاءة واحترافية كاملة داخل الاستوديو المجهز</p>
+                <span class="service-tag">متاح الآن</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎭</div>
+                <h3>تصوير خارجي</h3>
+                <p>تصوير في أجمل المواقع الخارجية والمعالم</p>
+                <span class="service-tag">متاح الآن</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🖼️</div>
+                <h3>طباعة صور</h3>
+                <p>طباعة عالية الجودة على أفضل أنواع الورق</p>
+                <span class="service-tag">متاح الآن</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <span class="section-tag">تواصل معنا</span>
+            <h2 class="section-title">جاهزون لحجز موعدك</h2>
+            <p class="section-desc">تواصل معنا الآن واحجز موعد تصويرك</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <h4>الموقع</h4>
+                        <p>مصر - القاهرة</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <h4>الهاتف</h4>
+                        <p>+20 112 247 2776</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">⏰</span>
+                    <div>
+                        <h4>ساعات العمل</h4>
+                        <p>يومياً من 10 صباحاً حتى 10 مساءً</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-action">
+                <h3>احجز موعدك الآن</h3>
+                <p>اضغط على الزر أدناه للتواصل مع المسؤول مباشرة</p>
+                <a href="https://wa.me/+201122472776/?text=السلام+عليكم+عايز/ه+احجز+موعد+تصوير" class="btn btn-whatsapp-large" target="_blank">
+                    <span class="whatsapp-icon">💬</span>
+                    <span>تواصل مع المسؤول</span>
+                </a>
+                <a href="https://www.instagram.com/star.agency.eg?igsh=MW5haGp1MWp1aG9wdA==" class="btn btn-instagram-large" target="_blank">
+                    <span class="btn-icon">📷</span>
+                    <span>قناة انستا الاستوديو</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="modal-overlay" id="dev-modal-overlay"></div>
+    <div class="modal dev-modal" id="dev-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-icon">👨‍💻</div>
+                <button class="close-btn" id="close-dev-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">السلام عليكم</h2>
+                <div class="modal-divider"></div>
+                <p class="modal-text dev-text">
+                    انا LORD شخص عادي. يحب كتابه المواقع البرمجيه مقابل سعر قليل على قد الايد
+                </p>
+                <p class="modal-text dev-text">
+                    كتابه الموقع التعرفيه مثل الاستديو او موقع شخصي ليست تلك المواقع الكبيره لكن جيد
+                </p>
+                <a href="https://wa.me/201069763045?text=السلام+عليكم" class="btn btn-whatsapp-modal" target="_blank">
+                    <span class="whatsapp-icon">💬</span>
+                    <span>تواصل مع المطور</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-icon">📸</span>
+                <span class="footer-name">Star agency</span>
+            </div>
+            <div class="footer-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#services">خدماتنا</a>
+                <a href="#contact">تواصل معنا</a>
+            </div>
+            <div class="footer-social">
+                <a href="tel:+201122472776" class="social-link">📱</a>
+                <a href="https://www.instagram.com/star.agency.eg?igsh=MW5haGp1MWp1aG9wdA==" class="social-link" target="_blank">📷</a>
+                <a href="https://wa.me/+201122472776/?text=السلام+عليكم+عايز/ه+احجز+موعد+تصوير" class="social-link" target="_blank">💬</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; 2026 Star agency</p>
+            <p>صنع بإتقان في مصر</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
