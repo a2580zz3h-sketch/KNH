@@ -1,0 +1,432 @@
+/* ============ Design Tokens ============ */
+:root{
+  --night:#0B3D2E;
+  --night-2:#0F4A38;
+  --teal:#114B3F;
+  --gold:#C9A24B;
+  --gold-light:#E4C87A;
+  --parchment:#F6EFDD;
+  --parchment-2:#FBF7EC;
+  --ink:#1E2A22;
+  --ink-soft:#4B5A50;
+  --line:#D8C79A;
+  --done:#7FA98B;
+  --shadow: 0 10px 30px rgba(11,61,46,.18);
+  --radius: 18px;
+  --font-display:'Amiri', serif;
+  --font-body:'Tajawal', sans-serif;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:var(--font-body);
+  background:
+    radial-gradient(circle at 15% 0%, rgba(201,162,75,.10), transparent 40%),
+    radial-gradient(circle at 100% 20%, rgba(201,162,75,.08), transparent 45%),
+    var(--night);
+  color:var(--ink);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* geometric islamic pattern overlay, subtle */
+.pattern-overlay{
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  opacity:.06;
+  background-image:
+    linear-gradient(45deg, var(--gold) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--gold) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--gold) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--gold) 75%);
+  background-size:60px 60px;
+  background-position:0 0, 0 30px, 30px -30px, -30px 0px;
+}
+
+/* ============ Header ============ */
+.site-header{
+  position:relative; z-index:1;
+  text-align:center;
+  padding:56px 20px 32px;
+  color:var(--parchment);
+}
+
+.arch{
+  width:110px; height:130px;
+  margin:0 auto 18px;
+  background:linear-gradient(180deg, var(--gold-light), var(--gold));
+  border-radius:55px 55px 8px 8px;
+  display:flex; align-items:flex-start; justify-content:center;
+  padding:8px;
+  box-shadow:0 12px 26px rgba(0,0,0,.35);
+}
+.arch-inner{
+  width:100%; height:100%;
+  background:var(--night);
+  border-radius:48px 48px 4px 4px;
+  display:flex; align-items:center; justify-content:center;
+}
+.crescent{
+  font-size:2.6rem;
+  color:var(--gold-light);
+  text-shadow:0 0 18px rgba(228,200,122,.6);
+}
+
+.site-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(2.1rem, 5vw, 3rem);
+  letter-spacing:.5px;
+  color:var(--parchment);
+}
+.site-sub{
+  margin-top:8px;
+  font-size:.95rem;
+  color:var(--gold-light);
+  font-weight:300;
+}
+
+/* ============ Tabs ============ */
+.tabs{
+  position:relative; z-index:1;
+  display:flex; justify-content:center; flex-wrap:wrap;
+  gap:10px;
+  padding:0 16px 20px;
+}
+.tab-btn{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:.95rem;
+  padding:11px 22px;
+  border-radius:999px;
+  border:1.5px solid var(--gold);
+  background:transparent;
+  color:var(--gold-light);
+  cursor:pointer;
+  transition:all .25s ease;
+}
+.tab-btn:hover{background:rgba(201,162,75,.15);}
+.tab-btn.active{
+  background:var(--gold);
+  color:var(--night);
+  box-shadow:0 6px 16px rgba(201,162,75,.35);
+}
+
+/* ============ Main content ============ */
+#app{
+  position:relative; z-index:1;
+  max-width:760px;
+  margin:0 auto;
+  background:var(--parchment);
+  border-radius:28px 28px 0 0;
+  padding:28px 20px 60px;
+  min-height:60vh;
+  box-shadow:0 -10px 40px rgba(0,0,0,.25);
+}
+
+.cat-header{
+  display:flex; align-items:center; gap:14px;
+  border-bottom:2px dashed var(--line);
+  padding-bottom:18px;
+  margin-bottom:18px;
+}
+.cat-icon{font-size:2.2rem;}
+.cat-header h2{
+  font-family:var(--font-display);
+  font-size:1.5rem;
+  color:var(--teal);
+}
+.cat-desc{
+  font-size:.85rem;
+  color:var(--ink-soft);
+  margin-top:2px;
+}
+.reset-cat-btn{
+  margin-inline-start:auto;
+  border:1px solid var(--line);
+  background:var(--parchment-2);
+  color:var(--ink-soft);
+  border-radius:10px;
+  padding:8px 12px;
+  font-family:var(--font-body);
+  font-size:.8rem;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.reset-cat-btn:hover{background:#fff; border-color:var(--gold);}
+
+.progress-track{
+  height:6px; border-radius:999px;
+  background:#E7DCBB;
+  overflow:hidden;
+  margin-bottom:22px;
+}
+.progress-fill{
+  height:100%; width:0%;
+  background:linear-gradient(90deg, var(--teal), var(--gold));
+  transition:width .4s ease;
+}
+
+/* ============ Azkar list ============ */
+.azkar-list{list-style:none; display:flex; flex-direction:column; gap:16px;}
+
+.zikr-card{
+  background:var(--parchment-2);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  position:relative;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.zikr-card.done{
+  border-color:var(--done);
+  background:linear-gradient(180deg, #EFF7F1, var(--parchment-2));
+}
+.zikr-card:hover{box-shadow:var(--shadow);}
+
+.zikr-index{
+  position:absolute; top:-10px; right:16px;
+  background:var(--teal);
+  color:var(--parchment);
+  font-size:.7rem;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:999px;
+}
+
+.zikr-text{
+  font-family:var(--font-display);
+  font-size:1.18rem;
+  line-height:2.15;
+  color:var(--ink);
+}
+
+.zikr-fadl{
+  margin-top:10px;
+  font-size:.82rem;
+  color:var(--ink-soft);
+  border-right:3px solid var(--gold);
+  padding-right:10px;
+  line-height:1.9;
+}
+
+.zikr-footer{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-top:14px;
+  gap:12px;
+}
+
+.count-btn{
+  display:flex; align-items:center; gap:8px;
+  border:none;
+  background:var(--teal);
+  color:var(--parchment);
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:.95rem;
+  padding:10px 20px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:transform .12s ease, background .2s ease;
+}
+.count-btn:active{transform:scale(.94);}
+.zikr-card.done .count-btn{background:var(--done);}
+
+.count-badge{
+  background:rgba(0,0,0,.15);
+  border-radius:999px;
+  padding:2px 10px;
+  font-size:.85rem;
+}
+
+.mini-beads{display:flex; gap:4px;}
+.mini-bead{
+  width:9px; height:9px; border-radius:50%;
+  background:#DCCFA2;
+  transition:background .2s ease, transform .2s ease;
+}
+.mini-bead.on{background:var(--gold); transform:scale(1.15);}
+
+/* ============ Floating tasbih button ============ */
+.tasbih-fab{
+  position:fixed; bottom:22px; left:22px; z-index:20;
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  background:linear-gradient(160deg, var(--gold-light), var(--gold));
+  color:var(--night);
+  border:none;
+  width:74px; height:74px;
+  border-radius:50%;
+  box-shadow:0 10px 24px rgba(0,0,0,.35);
+  cursor:pointer;
+  font-family:var(--font-body);
+}
+.fab-beads{font-size:1.5rem; line-height:1;}
+.fab-label{font-size:.62rem; font-weight:700;}
+.tasbih-fab:hover{transform:translateY(-3px);}
+
+/* ============ Tasbih modal ============ */
+.tasbih-overlay{
+  position:fixed; inset:0; z-index:50;
+  background:rgba(11,25,19,.72);
+  backdrop-filter:blur(3px);
+  display:none;
+  align-items:center; justify-content:center;
+  padding:16px;
+}
+.tasbih-overlay.open{display:flex;}
+
+.tasbih-modal{
+  width:100%; max-width:420px;
+  background:var(--parchment);
+  border-radius:26px;
+  padding:22px 20px 26px;
+  position:relative;
+  box-shadow:0 30px 60px rgba(0,0,0,.5);
+  border:1px solid var(--gold);
+  animation:pop .28s ease;
+}
+@keyframes pop{from{transform:scale(.9); opacity:0;} to{transform:scale(1); opacity:1;}}
+
+.close-modal{
+  position:absolute; top:14px; left:14px;
+  width:32px; height:32px; border-radius:50%;
+  border:none; background:var(--teal); color:var(--parchment);
+  cursor:pointer; font-size:.9rem;
+}
+
+.tasbih-header{text-align:center; margin-bottom:10px;}
+.tasbih-header h3{
+  font-family:var(--font-display);
+  color:var(--teal);
+  font-size:1.3rem;
+  margin-bottom:12px;
+}
+
+.dhikr-select{
+  display:flex; flex-wrap:wrap; gap:6px; justify-content:center;
+  margin-bottom:10px;
+}
+.dhikr-chip{
+  font-family:var(--font-body);
+  font-size:.72rem;
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--ink-soft);
+  cursor:pointer;
+}
+.dhikr-chip.active{background:var(--gold); border-color:var(--gold); color:var(--night); font-weight:700;}
+
+.current-dhikr{
+  font-family:var(--font-display);
+  font-size:1.25rem;
+  color:var(--ink);
+}
+
+.tasbih-body{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:14px;
+  margin-top:10px;
+}
+
+/* draggable bead track */
+.beads-track{
+  position:relative;
+  width:70px; height:230px;
+  background:linear-gradient(180deg, var(--teal), var(--night));
+  border-radius:35px;
+  overflow:hidden;
+  flex-shrink:0;
+  touch-action:none;
+  box-shadow:inset 0 0 14px rgba(0,0,0,.4);
+}
+.beads-string{
+  position:absolute; left:50%; top:0; bottom:0;
+  width:3px; transform:translateX(-50%);
+  background:repeating-linear-gradient(180deg, var(--gold) 0 8px, transparent 8px 16px);
+  opacity:.5;
+}
+.bead-tassel{
+  position:absolute; bottom:10px; left:50%; transform:translateX(-50%);
+  width:16px; height:16px; border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 8px rgba(201,162,75,.7);
+}
+.drag-bead{
+  position:absolute; left:50%; top:14px;
+  transform:translateX(-50%);
+  width:44px; height:44px; border-radius:50%;
+  background:radial-gradient(circle at 32% 28%, var(--gold-light), var(--gold) 60%, #8a6a24 100%);
+  box-shadow:0 6px 14px rgba(0,0,0,.4);
+  cursor:grab;
+  transition:top .35s cubic-bezier(.34,1.56,.64,1);
+}
+.drag-bead:active{cursor:grabbing; transition:none;}
+.drag-bead.snap-back{transition:top .35s cubic-bezier(.34,1.56,.64,1);}
+
+/* side counter */
+.side-counter{
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  flex:1;
+}
+.counter-ring{position:relative; width:120px; height:120px;}
+.ring-svg{width:100%; height:100%; transform:rotate(-90deg);}
+.ring-bg{fill:none; stroke:#E7DCBB; stroke-width:9;}
+.ring-fg{
+  fill:none; stroke:var(--gold); stroke-width:9; stroke-linecap:round;
+  stroke-dasharray:326.7; stroke-dashoffset:326.7;
+  transition:stroke-dashoffset .3s ease;
+}
+.counter-number{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display);
+  font-size:2.3rem; font-weight:700; color:var(--teal);
+}
+.counter-label{font-size:.8rem; color:var(--ink-soft); font-weight:700;}
+.counter-round{font-size:.72rem; color:var(--gold); font-weight:700;}
+
+.counter-actions{display:flex; gap:8px; margin-top:6px;}
+.counter-actions button{
+  width:34px; height:34px; border-radius:50%;
+  border:1px solid var(--line); background:#fff; color:var(--ink);
+  cursor:pointer; font-size:1rem;
+}
+.counter-actions button:hover{border-color:var(--gold);}
+
+.drag-hint{
+  text-align:center; font-size:.72rem; color:var(--ink-soft);
+  margin-top:16px;
+}
+
+/* ============ Footer ============ */
+.site-footer{
+  position:relative; z-index:1;
+  text-align:center;
+  padding:26px 20px 40px;
+  color:var(--gold-light);
+  font-family:var(--font-display);
+  font-size:1rem;
+  max-width:620px;
+  margin:0 auto;
+  line-height:2;
+}
+
+/* ============ Responsive ============ */
+@media (max-width:480px){
+  .tasbih-body{flex-direction:column;}
+  .beads-track{width:60px; height:170px;}
+  .drag-bead{width:38px; height:38px;}
+}
+
+/* ============ Accessibility ============ */
+button:focus-visible, .tab-btn:focus-visible{
+  outline:3px solid var(--gold-light);
+  outline-offset:2px;
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
+}
